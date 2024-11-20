@@ -1,5 +1,3 @@
 node_modules
 chave-api.txt
-MarcoTulio2023
-@Mtfa2004
-mongodb+srv://MarcoTulio2023:@Mtfa2004@cluster0.f7ocv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+.env
