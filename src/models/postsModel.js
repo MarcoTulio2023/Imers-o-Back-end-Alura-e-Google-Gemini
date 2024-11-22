@@ -5,7 +5,7 @@ const conexao = await conectarAoBanco(process.env.STRING_CONEXAO)
 // Conecta ao banco de dados usando a string de conexão fornecida pela variável de ambiente STRING_CONEXAO
 // O resultado da conexão é armazenado na variável conexao
 
-export default async function getTodosPosts(){
+export async function getTodosPosts(){
     // Função assíncrona para obter todos os posts do banco de dados
     const db = conexao.db("imersao-alura")
     // Obtém o banco de dados chamado "imersao-alura" a partir da conexão estabelecida
@@ -13,4 +13,10 @@ export default async function getTodosPosts(){
     // Obtém a coleção "posts" dentro do banco de dados
     return colecao.find().toArray()
     // Executa uma consulta para encontrar todos os documentos da coleção e retorna um array com os resultados
+}
+
+export async function criarPost(novoPost) {
+    const db = conexao.db("imersao-alura")
+    const colecao = db.collection("posts")
+    return colecao.insertOne(novoPost)
 }
